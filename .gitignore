@@ -1,0 +1,34 @@
+[bB]in/
+[oO]bj/
+*.suo
+[dD]atabase*.sql
+prepDB.sql
+*.user
+*.dbmdl
+*.jfm
+FisBuild/
+[Pp]ackages/
+*.vspscc
+licenses.licx
+/.axoCover
+
+# SonarQube
+.sonarqube/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# Visual Studio Code directory
+.vscode/
+
+# Cake tools
+tools/*
+!tools/packages.config
+.ci/
+
+# Build configuration file should be ingored. It is not neccesary to have it under source control since it is a branch specific.
+# If you're going to create local builds, then create a new local-build.json file and put it in this directory (git repository root)
+#
+# Look for the './CI/local-build.json.template' file and use it as a template
+local-build.json
+
