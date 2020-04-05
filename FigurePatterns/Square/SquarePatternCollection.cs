@@ -18,7 +18,27 @@ namespace TetrisClient.FigurePatterns.Square
                     Angle = EAngel._000,
                     OffsetX = 0,
                     OffsetY = 0
-                }
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
+                    Line = "...x",
+                    Height = 2,
+                    Width = 2,
+                    Angle = EAngel._000,
+                    OffsetX = 0,
+                    OffsetY = 0
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
+                    Line = "..x.",
+                    Height = 2,
+                    Width = 2,
+                    Angle = EAngel._000,
+                    OffsetX = 0,
+                    OffsetY = 0
+                },
             };
         }
 

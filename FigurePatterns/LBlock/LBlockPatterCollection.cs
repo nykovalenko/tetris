@@ -21,6 +21,15 @@ namespace TetrisClient.FigurePatterns.LBlock
                 new FigurePattern()
                 {
                     Weight = 10,
+                    Line = "..x...",
+                    Height = 3,
+                    Width = 2,
+                    Angle = EAngel._180,
+                    OffsetX = 1
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
                     Line = "....xx",
                     Height = 2,
                     Width = 3,

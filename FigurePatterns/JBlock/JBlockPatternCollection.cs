@@ -30,6 +30,15 @@ namespace TetrisClient.FigurePatterns.JBlock
                 new FigurePattern()
                 {
                     Weight = 10,
+                    Line = "...x..",
+                    Height = 3,
+                    Width = 2,
+                    Angle = EAngel._180,
+                    OffsetX = 0
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
                     Line = "...xxx",
                     Height = 2,
                     Width = 3,

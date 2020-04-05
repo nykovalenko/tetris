@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using TetrisClient.Entities;
 using TetrisClient.FigurePatterns;
 using TetrisClient.FigurePatterns.Square;
+using TetrisClient.Helpers;
 using TetrisClient.Strategies;
 
 namespace TetrisClient
@@ -45,6 +46,7 @@ namespace TetrisClient
             _placeForPatternFindStrategy = new PlaceForPatternFindStrategy();
             _commandGenerateStrategy = new CommandGenerateStrategy();
             _figurePatternCollectionFactory = new FigurePatternCollectionFactory();
+            Logger.InitLogger();
         }
 
 		/// <summary>
@@ -59,7 +61,7 @@ namespace TetrisClient
                 try
                 {
                     var figure = new Figure(board.GetCurrentFigureType(), board.GetCurrentFigurePosition());
-                    var cup = new Cup(board.Line, board.Size);
+                    var cup = new Cup(board);
                     var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type);
                     var place = _placeForPatternFindStrategy.Find(cup, patternCollection);
 
@@ -72,7 +74,7 @@ namespace TetrisClient
             }
             finally
             {
-                Console.WriteLine((DateTime.Now - time).TotalMilliseconds);
+                Logger.Log.Info((DateTime.Now - time).TotalMilliseconds);
             }
         }
 
