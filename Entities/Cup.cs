@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TetrisClient.Entities
+﻿namespace TetrisClient.Entities
 {
     public class Cup
     {
         public Cup(string line, int lengthXY)
         {
-            Line = line.Replace('O', 'x') + string.Empty.PadRight(lengthXY, 'x');
+            Line = line.Replace('O', 'x').Replace('I', 'x').Replace('T', 'x').Replace('S', 'x').Replace('Z', 'x').Replace('J', 'x').Replace('L', 'x') + string.Empty.PadRight(lengthXY * 5, 'x');
             Size = lengthXY;
         }
 

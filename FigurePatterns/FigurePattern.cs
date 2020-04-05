@@ -1,10 +1,16 @@
-﻿namespace TetrisClient.FigurePatterns
+﻿using TetrisClient.Enums;
+
+namespace TetrisClient.FigurePatterns
 {
-    public abstract class FigurePattern
+    public class FigurePattern
     {
-        public abstract int Weight { get; }
-        public abstract string Line { get; }
-        public abstract int Height { get; }
-        public abstract int Width { get; }
+        public int Weight { get; set; }
+        public string Line { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+        public EAngel Angle { get; set; }
+
+        public int OffsetX { get; set; }
+        public int OffsetY { get; set; }
     }
 }

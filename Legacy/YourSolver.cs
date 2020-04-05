@@ -19,9 +19,12 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
+
+using System;
 using TetrisClient;
 using System.Collections.Generic;
 using TetrisClient.Entities;
+using TetrisClient.FigurePatterns;
 using TetrisClient.FigurePatterns.Square;
 using TetrisClient.Strategies;
 
@@ -34,12 +37,14 @@ namespace TetrisClient
     {
         private readonly PlaceForPatternFindStrategy _placeForPatternFindStrategy;
         private readonly CommandGenerateStrategy _commandGenerateStrategy;
+        private readonly FigurePatternCollectionFactory _figurePatternCollectionFactory;
 
         public YourSolver(string server)
 			: base(server)
 		{
             _placeForPatternFindStrategy = new PlaceForPatternFindStrategy();
             _commandGenerateStrategy = new CommandGenerateStrategy();
+            _figurePatternCollectionFactory = new FigurePatternCollectionFactory();
         }
 
 		/// <summary>
@@ -47,11 +52,28 @@ namespace TetrisClient
 		/// </summary>
 		protected internal override Command Get(Board board)
         {
-            var figure = new Figure(board.GetCurrentFigureType(), board.GetCurrentFigurePosition());
-            var cup = new Cup(board.Line, board.Size);
-            var place = _placeForPatternFindStrategy.Find(cup, new SquarePattern());
-            
-            return _commandGenerateStrategy.GenerateCommand(figure, place);
+            var time = DateTime.Now;
+
+            try
+            {
+                try
+                {
+                    var figure = new Figure(board.GetCurrentFigureType(), board.GetCurrentFigurePosition());
+                    var cup = new Cup(board.Line, board.Size);
+                    var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type);
+                    var place = _placeForPatternFindStrategy.Find(cup, patternCollection);
+
+                    return _commandGenerateStrategy.GenerateCommand(figure, place);
+                }
+                catch
+                {
+                    return Command.MoveTo(Direction.Down);
+                }
+            }
+            finally
+            {
+                Console.WriteLine((DateTime.Now - time).TotalMilliseconds);
+            }
         }
 
 	}

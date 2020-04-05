@@ -58,11 +58,20 @@
   <ItemGroup>
     <Compile Include="Entities\Figure.cs" />
     <Compile Include="Entities\Cup.cs" />
-    <Compile Include="Entities\PlaceForPattern.cs" />
+    <Compile Include="Entities\PlaceForFigure.cs" />
+    <Compile Include="Enums\EAngel.cs" />
     <Compile Include="FigurePatterns\FigurePattern.cs" />
+    <Compile Include="FigurePatterns\FigurePatternCollection.cs" />
+    <Compile Include="FigurePatterns\FigurePatternCollectionFactory.cs" />
+    <Compile Include="FigurePatterns\JBlock\JBlockPatternCollection.cs" />
+    <Compile Include="FigurePatterns\LBlock\LBlockPatterCollection.cs" />
+    <Compile Include="FigurePatterns\Line\LinePatternCollection.cs" />
+    <Compile Include="FigurePatterns\SBlock\SBlockPatternCollection.cs" />
+    <Compile Include="FigurePatterns\TBlock\TBlockPatternCollection.cs" />
+    <Compile Include="FigurePatterns\ZBlock\ZBlockPatternCollection.cs" />
     <Compile Include="Strategies\ComandGenerateStrategy.cs" />
     <Compile Include="Strategies\PlaceForPatternFindStrategy.cs" />
-    <Compile Include="FigurePatterns\Square\SquarePattern.cs" />
+    <Compile Include="FigurePatterns\Square\SquarePatternCollection.cs" />
     <Compile Include="Legacy\AbstractSolver.cs" />
     <Compile Include="Legacy\Board.cs" />
     <Compile Include="Legacy\Command.cs" />
