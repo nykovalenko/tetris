@@ -11,6 +11,7 @@ namespace TetrisClient.FigurePatterns
         public EAngel Angle { get; set; }
 
         public int OffsetX { get; set; }
-        public int OffsetY { get; set; }
+
+        public int DiffBetweenYAndLevel { get; set; }
     }
 }

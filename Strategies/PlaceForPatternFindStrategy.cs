@@ -33,8 +33,8 @@ namespace TetrisClient.Strategies
             }
             
 
-            var minY = placesForFigure.Min(pff => pff.PatternPoint.Y + 1 - pff.Pattern.Height);
-            var resultPlace = placesForFigure.FirstOrDefault(pff => (pff.PatternPoint.Y + 1 - pff.Pattern.Height) == minY);
+            var minLevel = placesForFigure.Min(pff => pff.Level);
+            var resultPlace = placesForFigure.FirstOrDefault(pff => pff.Level == minLevel);
             return resultPlace;
         }
 

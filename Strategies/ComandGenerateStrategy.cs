@@ -10,7 +10,7 @@ namespace TetrisClient.Strategies
         {
             try
             {
-                var dif = figure.CurrentPoint.X - placeForFigure.FigurePoint.X;
+                var dif = figure.CurrentPoint.X - placeForFigure.FigurePointX;
 
                 if (dif == 0)
                 {

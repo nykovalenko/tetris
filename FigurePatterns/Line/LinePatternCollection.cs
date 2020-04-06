@@ -17,6 +17,7 @@ namespace TetrisClient.FigurePatterns.Line
                     Width = 4,
                     Angle = EAngel._090,
                     OffsetX = 2,
+                    DiffBetweenYAndLevel = 1
                 },
                 new FigurePattern()
                 {
@@ -25,16 +26,8 @@ namespace TetrisClient.FigurePatterns.Line
                     Height = 4,
                     Width = 1,
                     Angle = EAngel._000,
-                    OffsetX = 0
-                },
-                new FigurePattern()
-                {
-                    Weight = 10,
-                    Line = "x....x",
-                    Height = 1,
-                    Width = 6,
-                    Angle = EAngel._090,
-                    OffsetX = 2,
+                    OffsetX = 0,
+                    DiffBetweenYAndLevel = 3
                 },
             };
         }

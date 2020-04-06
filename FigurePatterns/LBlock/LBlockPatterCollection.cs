@@ -16,7 +16,8 @@ namespace TetrisClient.FigurePatterns.LBlock
                     Height = 3,
                     Width = 2,
                     Angle = EAngel._180,
-                    OffsetX = 1
+                    OffsetX = 1,
+                    DiffBetweenYAndLevel = 3
                 },
                 new FigurePattern()
                 {
@@ -25,7 +26,8 @@ namespace TetrisClient.FigurePatterns.LBlock
                     Height = 3,
                     Width = 2,
                     Angle = EAngel._180,
-                    OffsetX = 1
+                    OffsetX = 1,
+                    DiffBetweenYAndLevel = 3
                 },
                 new FigurePattern()
                 {
@@ -34,7 +36,8 @@ namespace TetrisClient.FigurePatterns.LBlock
                     Height = 2,
                     Width = 3,
                     Angle = EAngel._090,
-                    OffsetX = 1
+                    OffsetX = 1,
+                    DiffBetweenYAndLevel = 2
                 },
                 new FigurePattern()
                 {
@@ -43,7 +46,8 @@ namespace TetrisClient.FigurePatterns.LBlock
                     Height = 2,
                     Width = 3,
                     Angle = EAngel._270,
-                    OffsetX = 1
+                    OffsetX = 1,
+                    DiffBetweenYAndLevel = 1
                 },
                 new FigurePattern()
                 {
@@ -52,7 +56,8 @@ namespace TetrisClient.FigurePatterns.LBlock
                     Height = 2,
                     Width = 2,
                     Angle = EAngel._000,
-                    OffsetX = 0
+                    OffsetX = 0,
+                    DiffBetweenYAndLevel = 1
                 },
             };
         }

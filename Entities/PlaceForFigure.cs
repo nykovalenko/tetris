@@ -11,11 +11,15 @@ namespace TetrisClient.Entities
         {
             _pattern = pattern;
             PatternPoint = patternPoint;
+            FigurePointX = PatternPoint.X + _pattern.OffsetX;
+            Level = patternPoint.Y - _pattern.DiffBetweenYAndLevel;
+            FigureAngel = _pattern.Angle;
         }
 
         public FigurePattern Pattern => _pattern;
         public Point PatternPoint { get; }
-        public Point FigurePoint => new Point(PatternPoint.X + _pattern.OffsetX, PatternPoint.Y + _pattern.OffsetY);
-        public EAngel FigureAngel => _pattern.Angle;
+        public int FigurePointX { get; }
+        public EAngel FigureAngel { get; }
+        public int Level { get; }
     }
 }
