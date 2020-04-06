@@ -62,7 +62,7 @@ namespace TetrisClient
                 {
                     var figure = new Figure(board.GetCurrentFigureType(), board.GetCurrentFigurePosition());
                     var cup = new Cup(board);
-                    var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type);
+                    var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type, cup);
                     var place = _placeForPatternFindStrategy.Find(cup, patternCollection);
 
                     return _commandGenerateStrategy.GenerateCommand(figure, place);
@@ -74,7 +74,7 @@ namespace TetrisClient
             }
             finally
             {
-                Logger.Log.Info((DateTime.Now - time).TotalMilliseconds);
+                //Logger.Log.Info((DateTime.Now - time).TotalMilliseconds);
             }
         }
 

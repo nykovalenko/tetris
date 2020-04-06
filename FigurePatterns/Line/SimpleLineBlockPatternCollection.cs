@@ -3,22 +3,12 @@ using TetrisClient.Enums;
 
 namespace TetrisClient.FigurePatterns.Line
 {
-    public class LinePatternCollection : SimpleLineBlockPatternCollection
+    public class SimpleLineBlockPatternCollection : FigurePatternCollection
     {
-        public LinePatternCollection()
+        public SimpleLineBlockPatternCollection()
         {
             Collection = new List<FigurePattern>()
             {
-                new FigurePattern()
-                {
-                    Weight = 10,
-                    Line = "....xxxx",
-                    Height = 2,
-                    Width = 4,
-                    Angle = EAngel._090,
-                    OffsetX = 2,
-                    DiffBetweenYAndLevel = 1
-                },
                 new FigurePattern()
                 {
                     Weight = 5,

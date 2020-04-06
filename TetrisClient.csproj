@@ -69,6 +69,7 @@
     <Compile Include="FigurePatterns\JBlock\JBlockPatternCollection.cs" />
     <Compile Include="FigurePatterns\LBlock\LBlockPatterCollection.cs" />
     <Compile Include="FigurePatterns\Line\LinePatternCollection.cs" />
+    <Compile Include="FigurePatterns\Line\SimpleLineBlockPatternCollection.cs" />
     <Compile Include="FigurePatterns\SBlock\SBlockPatternCollection.cs" />
     <Compile Include="FigurePatterns\TBlock\TBlockPatternCollection.cs" />
     <Compile Include="FigurePatterns\ZBlock\ZBlockPatternCollection.cs" />

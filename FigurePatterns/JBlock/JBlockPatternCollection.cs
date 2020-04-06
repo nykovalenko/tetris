@@ -12,6 +12,16 @@ namespace TetrisClient.FigurePatterns.JBlock
                 new FigurePattern()
                 {
                     Weight = 10,
+                    Line = "...xx.",
+                    Height = 2,
+                    Width = 3,
+                    Angle = EAngel._270,
+                    OffsetX = 1,
+                    DiffBetweenYAndLevel = 2
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
                     Line = "...x.x",
                     Height = 3,
                     Width = 2,
@@ -28,16 +38,6 @@ namespace TetrisClient.FigurePatterns.JBlock
                     Angle = EAngel._180,
                     OffsetX = 0,
                     DiffBetweenYAndLevel = 3
-                },
-                new FigurePattern()
-                {
-                    Weight = 10,
-                    Line = "...xx.",
-                    Height = 2,
-                    Width = 3,
-                    Angle = EAngel._270,
-                    OffsetX = 1,
-                    DiffBetweenYAndLevel = 2
                 },
                 new FigurePattern()
                 {

@@ -27,7 +27,7 @@ namespace TetrisClient.FigurePatterns.Square
                     Width = 2,
                     Angle = EAngel._000,
                     OffsetX = 0,
-                    DiffBetweenYAndLevel = 1
+                    DiffBetweenYAndLevel = 0
                 },
                 new FigurePattern()
                 {
@@ -37,7 +37,7 @@ namespace TetrisClient.FigurePatterns.Square
                     Width = 2,
                     Angle = EAngel._000,
                     OffsetX = 0,
-                    DiffBetweenYAndLevel = 1
+                    DiffBetweenYAndLevel = 0
                 },
             };
         }
