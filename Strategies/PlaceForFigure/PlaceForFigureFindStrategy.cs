@@ -7,7 +7,7 @@ using TetrisClient.Strategies.CurrentFigureLocation;
 
 namespace TetrisClient.Strategies
 {
-    public class PlaceForPatternFindStrategy
+    public class PlaceForFigureFindStrategy
     {
         public PlaceForFigure Find(Cup cup, FigurePatternCollection patternCollection)
         {

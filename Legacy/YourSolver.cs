@@ -34,7 +34,7 @@ namespace TetrisClient
 	/// </summary>
 	internal class YourSolver : AbstractSolver
     {
-        private readonly PlaceForPatternFindStrategy _placeForPatternFindStrategy;
+        private readonly PlaceForFigureFindStrategy _placeForFigureFindStrategy;
         private readonly CommandGenerateStrategy _commandGenerateStrategy;
         private readonly FigurePatternCollectionFactory _figurePatternCollectionFactory;
         private readonly LevelDetermineStrategy _levelDetermineStrategy;
@@ -43,7 +43,7 @@ namespace TetrisClient
         public YourSolver(string server)
 			: base(server)
 		{
-            _placeForPatternFindStrategy = new PlaceForPatternFindStrategy();
+            _placeForFigureFindStrategy = new PlaceForFigureFindStrategy();
             _commandGenerateStrategy = new CommandGenerateStrategy();
             _figurePatternCollectionFactory = new FigurePatternCollectionFactory();
             _levelDetermineStrategy = new LevelDetermineStrategy();
@@ -68,7 +68,7 @@ namespace TetrisClient
                     _currentLevel = _levelDetermineStrategy.GetLevel(_currentLevel, cup.Board.GetFutureFigures());
 
                     var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type, cup, _currentLevel);
-                    var place = _placeForPatternFindStrategy.Find(cup, patternCollection);
+                    var place = _placeForFigureFindStrategy.Find(cup, patternCollection);
 
                     return _commandGenerateStrategy.GenerateCommand(figure, place);
                 }

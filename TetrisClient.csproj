@@ -86,7 +86,7 @@
     <Compile Include="Strategies\CurrentFigureLocation\Specific\TBlockLocationStrategy.cs" />
     <Compile Include="Strategies\CurrentFigureLocation\Specific\ZBlockLocationStrategy.cs" />
     <Compile Include="Strategies\LevelDetermineStrategy.cs" />
-    <Compile Include="Strategies\PlaceForFigure\PlaceForPatternFindStrategy.cs" />
+    <Compile Include="Strategies\PlaceForFigure\PlaceForFigureFindStrategy.cs" />
     <Compile Include="FigurePatterns\Square\SquarePatternCollection.cs" />
     <Compile Include="Legacy\AbstractSolver.cs" />
     <Compile Include="Legacy\Board.cs" />
