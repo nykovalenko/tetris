@@ -102,6 +102,7 @@
     <Compile Include="Legacy\WebSocket.cs" />
     <Compile Include="Legacy\YourSolver.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Strategies\PlaceForFigure\PlaceForFigureFindStrategyFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -26,6 +26,7 @@ using TetrisClient.Enums;
 using TetrisClient.FigurePatterns;
 using TetrisClient.Helpers;
 using TetrisClient.Strategies;
+using TetrisClient.Strategies.PlaceForFigure;
 
 namespace TetrisClient
 {
@@ -34,7 +35,7 @@ namespace TetrisClient
 	/// </summary>
 	internal class YourSolver : AbstractSolver
     {
-        private readonly PlaceForFigureFindStrategy _placeForFigureFindStrategy;
+        private readonly PlaceForFigureFindStrategyFactory _placeForFigureFindStrategyFactory;
         private readonly CommandGenerateStrategy _commandGenerateStrategy;
         private readonly FigurePatternCollectionFactory _figurePatternCollectionFactory;
         private readonly LevelDetermineStrategy _levelDetermineStrategy;
@@ -43,7 +44,7 @@ namespace TetrisClient
         public YourSolver(string server)
 			: base(server)
 		{
-            _placeForFigureFindStrategy = new PlaceForFigureFindStrategy();
+            _placeForFigureFindStrategyFactory = new PlaceForFigureFindStrategyFactory();
             _commandGenerateStrategy = new CommandGenerateStrategy();
             _figurePatternCollectionFactory = new FigurePatternCollectionFactory();
             _levelDetermineStrategy = new LevelDetermineStrategy();
@@ -68,7 +69,8 @@ namespace TetrisClient
                     _currentLevel = _levelDetermineStrategy.GetLevel(_currentLevel, cup.Board.GetFutureFigures());
 
                     var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type, cup, _currentLevel);
-                    var place = _placeForFigureFindStrategy.Find(cup, patternCollection);
+                    var placeForFigureFindStrategy = _placeForFigureFindStrategyFactory.GetStrategy(_currentLevel);
+                    var place = placeForFigureFindStrategy.Find(cup, patternCollection);
 
                     return _commandGenerateStrategy.GenerateCommand(figure, place);
                 }
