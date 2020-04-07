@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TetrisClient.Entities;
 using TetrisClient.FigurePatterns;
-using TetrisClient.Strategies.PlaceForFigure;
 
-namespace TetrisClient.Strategies
+namespace TetrisClient.Strategies.PlaceForFigure
 {
-    public class RegularyPlaceForFigureFindStrategy : PlaceForFigureFindStrategy
+    public class LinesOrientedPlaceForFigureFindStrategy : PlaceForFigureFindStrategy
     {
         protected override List<Entities.PlaceForFigure> CalculatePossiblePlacesForFigure(Cup cup, FigurePatternCollection patternCollection)
         {
@@ -15,7 +13,7 @@ namespace TetrisClient.Strategies
             {
                 for (var y = 0; y < cup.Size; y++)
                 {
-                    for (var x = 0; x < (cup.Size - (pattern.Width - 1)); x++)
+                    for (var x = 0; x < (GetMaxXValue(cup) - (pattern.Width - 1)); x++)
                     {
                         var result = string.Empty;
 
@@ -32,6 +30,13 @@ namespace TetrisClient.Strategies
             }
 
             return placesForFigure;
+        }
+
+        private int GetMaxXValue(Cup cup)
+        {
+            return cup.Board.GetCurrentFigureType() != Element.BLUE
+                ? cup.Size / 10 * 8
+                : cup.Size;
         }
     }
 }
