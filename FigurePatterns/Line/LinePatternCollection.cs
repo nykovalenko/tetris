@@ -12,6 +12,36 @@ namespace TetrisClient.FigurePatterns.Line
                 new FigurePattern()
                 {
                     Weight = 10,
+                    Line = "x.xx.x",
+                    Height = 2,
+                    Width = 3,
+                    Angle = EAngel._000,
+                    OffsetX = 1,
+                    DiffBetweenYAndLevel = 3
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
+                    Line = "x.x.x.",
+                    Height = 3,
+                    Width = 2,
+                    Angle = EAngel._000,
+                    OffsetX = 1,
+                    DiffBetweenYAndLevel = 4
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
+                    Line = ".x.x.x",
+                    Height = 3,
+                    Width = 2,
+                    Angle = EAngel._000,
+                    OffsetX = 0,
+                    DiffBetweenYAndLevel = 4
+                },
+                new FigurePattern()
+                {
+                    Weight = 10,
                     Line = "....xxxx",
                     Height = 2,
                     Width = 4,

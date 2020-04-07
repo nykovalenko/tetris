@@ -17,7 +17,7 @@ namespace TetrisClient.FigurePatterns.ZBlock
                     Width = 3,
                     Angle = EAngel._000,
                     OffsetX = 1,
-                    DiffBetweenYAndLevel = 1
+                    DiffBetweenYAndLevel = 2
                 },
                 new FigurePattern()
                 {
@@ -27,7 +27,7 @@ namespace TetrisClient.FigurePatterns.ZBlock
                     Width = 2,
                     Angle = EAngel._090,
                     OffsetX = 0,
-                    DiffBetweenYAndLevel = 2
+                    DiffBetweenYAndLevel = 3
                 },
                 new FigurePattern()
                 {
