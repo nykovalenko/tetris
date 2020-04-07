@@ -14,7 +14,7 @@ namespace TetrisClient.Strategies
             var placesForFigure = new List<PlaceForFigure>();
             foreach (var pattern in patternCollection.Collection)
             {
-                for (var y = 0; y < cup.Size-2; y++)
+                for (var y = 0; y < cup.Size; y++)
                 {
                     for (var x = 0; x < (cup.Size - (pattern.Width - 1)); x++)
                     {

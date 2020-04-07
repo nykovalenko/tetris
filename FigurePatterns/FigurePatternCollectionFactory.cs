@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using TetrisClient.Entities;
+using TetrisClient.Enums;
 using TetrisClient.FigurePatterns.JBlock;
 using TetrisClient.FigurePatterns.LBlock;
 using TetrisClient.FigurePatterns.Line;
@@ -34,13 +35,11 @@ namespace TetrisClient.FigurePatterns
             _sBlockPatternCollection = new SBlockPatternCollection();
             _zBlockPatternCollection = new ZBlockPatternCollection();
             _tBlockPatternCollection = new TBlockPatternCollection();
-
-            useRegularLinePattern = false;
         }
 
-        public FigurePatternCollection GetPatternCollection(Element type, Cup cup)
+        public FigurePatternCollection GetPatternCollection(Element type, Cup cup, ELevel currentLevel)
         {
-            useRegularLinePattern = UseRegularLinePattern(useRegularLinePattern, cup);
+            useRegularLinePattern = (currentLevel != ELevel.SquaresLines && currentLevel != ELevel.SquaresLinesLandJ);
 
             switch (type)
             {
@@ -63,14 +62,6 @@ namespace TetrisClient.FigurePatterns
                 default:
                     throw new NotImplementedException();
             }
-        }
-
-        private bool UseRegularLinePattern(bool currentUseRegularLinePattern, Cup cup)
-        {
-            if (currentUseRegularLinePattern)
-                return true;
-
-            return cup.Board.GetFutureFigures().Any(f => f != Element.YELLOW && f != Element.BLUE);
         }
     }
 }

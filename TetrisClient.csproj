@@ -63,6 +63,7 @@
     <Compile Include="Entities\Cup.cs" />
     <Compile Include="Entities\PlaceForFigure.cs" />
     <Compile Include="Enums\EAngel.cs" />
+    <Compile Include="Enums\ELevel.cs" />
     <Compile Include="FigurePatterns\FigurePattern.cs" />
     <Compile Include="FigurePatterns\FigurePatternCollection.cs" />
     <Compile Include="FigurePatterns\FigurePatternCollectionFactory.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Strategies\CurrentFigureLocation\Specific\SquareBlockLocationStrategy.cs" />
     <Compile Include="Strategies\CurrentFigureLocation\Specific\TBlockLocationStrategy.cs" />
     <Compile Include="Strategies\CurrentFigureLocation\Specific\ZBlockLocationStrategy.cs" />
+    <Compile Include="Strategies\LevelDetermineStrategy.cs" />
     <Compile Include="Strategies\PlaceForPatternFindStrategy.cs" />
     <Compile Include="FigurePatterns\Square\SquarePatternCollection.cs" />
     <Compile Include="Legacy\AbstractSolver.cs" />

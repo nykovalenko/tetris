@@ -21,11 +21,9 @@
  */
 
 using System;
-using TetrisClient;
-using System.Collections.Generic;
 using TetrisClient.Entities;
+using TetrisClient.Enums;
 using TetrisClient.FigurePatterns;
-using TetrisClient.FigurePatterns.Square;
 using TetrisClient.Helpers;
 using TetrisClient.Strategies;
 
@@ -39,6 +37,8 @@ namespace TetrisClient
         private readonly PlaceForPatternFindStrategy _placeForPatternFindStrategy;
         private readonly CommandGenerateStrategy _commandGenerateStrategy;
         private readonly FigurePatternCollectionFactory _figurePatternCollectionFactory;
+        private readonly LevelDetermineStrategy _levelDetermineStrategy;
+        private ELevel _currentLevel;
 
         public YourSolver(string server)
 			: base(server)
@@ -46,6 +46,8 @@ namespace TetrisClient
             _placeForPatternFindStrategy = new PlaceForPatternFindStrategy();
             _commandGenerateStrategy = new CommandGenerateStrategy();
             _figurePatternCollectionFactory = new FigurePatternCollectionFactory();
+            _levelDetermineStrategy = new LevelDetermineStrategy();
+            _currentLevel = ELevel.Unknown;
             Logger.InitLogger();
         }
 
@@ -62,7 +64,10 @@ namespace TetrisClient
                 {
                     var figure = new Figure(board.GetCurrentFigureType(), board.GetCurrentFigurePosition());
                     var cup = new Cup(board);
-                    var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type, cup);
+
+                    _currentLevel = _levelDetermineStrategy.GetLevel(_currentLevel, cup.Board.GetFutureFigures());
+
+                    var patternCollection = _figurePatternCollectionFactory.GetPatternCollection(figure.Type, cup, _currentLevel);
                     var place = _placeForPatternFindStrategy.Find(cup, patternCollection);
 
                     return _commandGenerateStrategy.GenerateCommand(figure, place);
@@ -74,7 +79,7 @@ namespace TetrisClient
             }
             finally
             {
-                //Logger.Log.Info((DateTime.Now - time).TotalMilliseconds);
+                Logger.Log.Info((DateTime.Now - time).TotalMilliseconds);
             }
         }
 
