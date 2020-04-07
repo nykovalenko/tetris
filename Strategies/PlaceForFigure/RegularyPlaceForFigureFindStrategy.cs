@@ -6,11 +6,11 @@ using TetrisClient.Strategies.CurrentFigureLocation;
 
 namespace TetrisClient.Strategies
 {
-    public class PlaceForFigureFindStrategy
+    public class RegularyPlaceForFigureFindStrategy
     {
-        public PlaceForFigure Find(Cup cup, FigurePatternCollection patternCollection)
+        public Entities.PlaceForFigure Find(Cup cup, FigurePatternCollection patternCollection)
         {
-            var placesForFigure = new List<PlaceForFigure>();
+            var placesForFigure = new List<Entities.PlaceForFigure>();
             foreach (var pattern in patternCollection.Collection)
             {
                 for (var y = 0; y < cup.Size; y++)
@@ -26,7 +26,7 @@ namespace TetrisClient.Strategies
                         }
 
                         if (result == pattern.Line && IsApplicablePosition(cup, x, y, pattern.Width))
-                            placesForFigure.Add(new PlaceForFigure(pattern, new Point(x, y)));
+                            placesForFigure.Add(new Entities.PlaceForFigure(pattern, new Point(x, y)));
                     }
                 }
             }

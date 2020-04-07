@@ -26,7 +26,8 @@ namespace TetrisClient
 {
 	class Program
 	{
-		static string ServerUrl = "http://codingdojo2020.westeurope.cloudapp.azure.com:8010/codenjoy-contest/board/player/i05ifpzzz63eq9b8hfdi?code=3097049020572766631&gameName=tetris";
+        //static string ServerUrl = "http://codingdojo2020.westeurope.cloudapp.azure.com:8010/codenjoy-contest/board/player/7dl0p1dxmcpja5juuxl7?code=1839381724244226045&gameName=tetris";
+        static string ServerUrl = "http://codingdojo2020.westeurope.cloudapp.azure.com:8010/codenjoy-contest/board/player/i05ifpzzz63eq9b8hfdi?code=3097049020572766631&gameName=tetris";
 
 		// you can get this code after registration on the server with your email
 		// http://server-ip:8080/codenjoy-contest/board/player/your@email.com?code=12345678901234567890

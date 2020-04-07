@@ -4,9 +4,9 @@ namespace TetrisClient.Strategies.PlaceForFigure
 {
     public class PlaceForFigureFindStrategyFactory
     {
-        public PlaceForFigureFindStrategy GetStrategy(ELevel currentLevel)
+        public RegularyPlaceForFigureFindStrategy GetStrategy(ELevel currentLevel)
         {
-            return new PlaceForFigureFindStrategy();
+            return new RegularyPlaceForFigureFindStrategy();
         }
     }
 }

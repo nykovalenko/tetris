@@ -6,7 +6,7 @@ namespace TetrisClient.Strategies
 {
     public class CommandGenerateStrategy
     {
-        public Command GenerateCommand(Figure figure, PlaceForFigure placeForFigure)
+        public Command GenerateCommand(Figure figure, Entities.PlaceForFigure placeForFigure)
         {
             try
             {
