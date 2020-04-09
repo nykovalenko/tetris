@@ -35,7 +35,7 @@ namespace TetrisClient.Strategies.PlaceForFigure
         private int GetMaxXValue(Cup cup)
         {
             return cup.Board.GetCurrentFigureType() != Element.BLUE
-                ? cup.Size / 10 * 8
+                ? cup.Size * 8 / 10
                 : cup.Size;
         }
     }
